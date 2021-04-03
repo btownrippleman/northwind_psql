@@ -7,23 +7,14 @@ jobs:
       - image: 'cimg/base:stable'
     steps:
       - slack/notify:
-          custom: |
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "plain_text",
-                      "text": "*This is a text notification*",
-                      "emoji": true
-                    }
-                  ]
-                }
-              ]
-            }
-          event: always
-workflows:
+              event: fail
+              template: basic_fail_1
+              mentions: "@EngineeringTeam"
+          # When there is a successful deployment, send a notification with a different template.
+          - slack/notify:
+              event: pass
+              template: success_tagged_deploy_1
+  workflows:
   send-notification:
     jobs:
       - notify:
