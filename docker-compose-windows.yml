@@ -32,7 +32,7 @@ services:
                 }
               ]
             }
-
+        event: always
 
 
 volumes:
