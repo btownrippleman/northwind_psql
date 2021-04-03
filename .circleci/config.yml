@@ -6,42 +6,8 @@ orbs:
   welcome: circleci/welcome-orb@0.4.1
 # Orchestrate or schedule a set of jobs
 workflows:
-
   # Name the workflow "welcome"
   welcome:
     # Run the welcome/run job in its own container
     jobs:
       - welcome/run
-  # send-notification:
-  #   jobs:
-  #     - notify:
-  #         context: slack-secrets 
-
-
-
-    notify:
-      steps:
-        - slack/notify:
-          custom: |
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "plain_text",
-                      "text": "*This is a text notification*",
-                      "emoji": true
-                    }
-                  ]
-                }
-              ]
-            }
-        # event: always
-        # - slack/status:
-        #   failure_message: ':red_circle: ${CIRCLE_JOB} Failed! Branch: ${CIRCLE_BRANCH}, Message: ${GIT_COMMIT_DESC}'
-        #   success_message: ':tada: ${CIRCLE_JOB} Succeeded! Branch: ${CIRCLE_BRANCH}, Message: ${GIT_COMMIT_DESC}'
-        #   webhook: ${SLACK_WEBHOOK}
-
-
-#ok so I'm finally adding to the config.yml file instead of the docker-compose.yml, yeah!
