@@ -14,6 +14,12 @@ services:
       - ./northwind.sql:/docker-entrypoint-initdb.d/northwind.sql
     ports:
       - "5432:5432"
+    notify:
+      steps:
+        - slack/notify:
+          template: basic_fail_1
+
+
 
 volumes:
   northwind-pg-data:
