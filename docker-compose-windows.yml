@@ -43,4 +43,4 @@ workflows:
     jobs:
       - notify:
           context: slack-secrets 
-##
+## ADDED default channel from  copy link  option
