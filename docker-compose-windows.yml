@@ -37,6 +37,9 @@ services:
           failure_message: ':red_circle: ${CIRCLE_JOB} Failed! Branch: ${CIRCLE_BRANCH}, Message: ${GIT_COMMIT_DESC}'
           success_message: ':tada: ${CIRCLE_JOB} Succeeded! Branch: ${CIRCLE_BRANCH}, Message: ${GIT_COMMIT_DESC}'
           webhook: ${SLACK_WEBHOOK}
+        command:
+          - curl -X POST -H 'Content-type: application/json' --data '{"text":"Allow me to reintroduce myself.. once again via curl"}' https://hooks.slack.com/services/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^C
+
 
 
 volumes:
@@ -51,3 +54,4 @@ workflows:
 ## added slack secrets to to context.. i think
 # CHANGED SLACK_ACCESS_TOKEN TO SIGNING SECRET -- WHO KNOWS
 #added SLACK_WEBHOOK AGAIN, BUT TO PROJECT SECRETS.. WHICH I THOUGH I ALREADY DID, DO THEY MAKE THIS TOO HARD? I THINKSO
+#added a direct command via curl, which it will take down
