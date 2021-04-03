@@ -5,15 +5,26 @@ jobs:
   notify:
     docker:
       - image: 'cimg/base:stable'
-   steps:
-      - run: exit 0
-      - slack/status:
-          fail_only: false
-          mentions: 'USERID1,USERID2'
-          only_for_branches: only_for_branches
-          webhook: SLACK_WEBHOOK
+    steps:
+      - slack/notify:
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*This is a text notification*",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
 workflows:
   send-notification:
     jobs:
       - notify:
-          context: slack handshake
+          context: 'slack handshake'
