@@ -11,6 +11,6 @@ workflows:
     # Run the welcome/run job in its own container
     jobs:
       - welcome/run
-      - slack/notify:
-           event: fail
-           template: basic_fail_1
+      - slack/approval-notification:
+          message: Pending approval
+          webhook: webhook
