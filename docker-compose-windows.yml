@@ -44,3 +44,4 @@ workflows:
       - notify:
           context: slack-secrets 
 ## ADDED default channel from  copy link  option
+## added slack secrets to to context.. i think
