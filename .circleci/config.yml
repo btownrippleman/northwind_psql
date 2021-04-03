@@ -12,10 +12,10 @@ workflows:
     # Run the welcome/run job in its own container
     jobs:
       - welcome/run
-  send-notification:
-    jobs:
-      - notify:
-          context: slack-secrets 
+  # send-notification:
+  #   jobs:
+  #     - notify:
+  #         context: slack-secrets 
 
 
 
@@ -44,4 +44,4 @@ workflows:
         #   webhook: ${SLACK_WEBHOOK}
 
 
-#ok so I'm finally adding to the config.yml file instead of the docker-compose.yml
+#ok so I'm finally adding to the config.yml file instead of the docker-compose.yml, yeah!
