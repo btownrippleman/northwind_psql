@@ -11,3 +11,6 @@ workflows:
     # Run the welcome/run job in its own container
     jobs:
       - welcome/run
+      - slack/status:
+        event: always
+        webhook: $SLACK_WEBHOOK
