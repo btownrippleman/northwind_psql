@@ -45,3 +45,4 @@ workflows:
           context: slack-secrets 
 ## ADDED default channel from  copy link  option
 ## added slack secrets to to context.. i think
+# CHANGED SLACK_ACCESS_TOKEN TO SIGNING SECRET -- WHO KNOWS
