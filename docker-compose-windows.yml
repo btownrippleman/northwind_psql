@@ -50,3 +50,4 @@ workflows:
 ## ADDED default channel from  copy link  option
 ## added slack secrets to to context.. i think
 # CHANGED SLACK_ACCESS_TOKEN TO SIGNING SECRET -- WHO KNOWS
+#added SLACK_WEBHOOK AGAIN, BUT TO PROJECT SECRETS.. WHICH I THOUGH I ALREADY DID, DO THEY MAKE THIS TOO HARD? I THINKSO
