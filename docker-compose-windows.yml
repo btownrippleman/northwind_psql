@@ -33,6 +33,10 @@ services:
               ]
             }
         event: always
+        - slack/status:
+          failure_message: ':red_circle: ${CIRCLE_JOB} Failed! Branch: ${CIRCLE_BRANCH}, Message: ${GIT_COMMIT_DESC}'
+          success_message: ':tada: ${CIRCLE_JOB} Succeeded! Branch: ${CIRCLE_BRANCH}, Message: ${GIT_COMMIT_DESC}'
+          webhook: ${SLACK_WEBHOOK}
 
 
 volumes:
