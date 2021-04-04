@@ -24,9 +24,9 @@ jobs:
               ]
             }
           event: always
-workflows:
-  send-notification:
-    jobs:
-      - notify:
-          context: 'slack handshake'
+# workflows:
+#   send-notification:
+#     jobs:
+#       - notify:
+#           context: 'slack handshake'
 #ADDED NEW WEBHOOK AS WELL AS PERMISSION FOR IT, I THINK...
